@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //변수의 범위
+        //전역변수 > 다른 자바스크립트에서 접근이 가능하다.
+        let globalVar= 10;
+        //지역변수>블록/함수에서만 사용할 수 있는 변수
+            for(let i = 0; i<10 ; i ++){
+                document.write(`<p>${i}</P>`)
+            }
+            // document.write(i) //블록을 벗어낫으므로 사용할수 없다.
+            let name ="홍길동";
+            if(true){
+                let name = "성춘향";
+                //동일한 이름의 전역변수와 지역변수가 있을때,
+                //가장 가까운 지역변수를 가지고 온다 
+                document.write(name);
+            }
+            document.write(name);
+            //변수의 적용범위 확인
+            let maxCount = 10;
+            for(let checkCount =1; checkCount <=maxCount ; checkCount++){
+                console.log(maxCount+"중의"+checkCount);
+            }
+
+            function add(a,b){
+                let sum = a+b;
+                function printNum(){
+                    document.write(sum)
+                }
+                printNum();
+            }
+            add(5,6)
+            
+            //클로저 함수 - 중첩함수의 하나로 외부 변수에 접근하는 함수 
+            function count (){
+                let count = 0;
+                return function (){
+                    return count +=1; 
+                }
+            }
+            //외부로 호출하기 위함 함수 - count() 함수 한 번 호출! 
+            let StartCount = count();
+
+            document.write(StartCount());
+            //클로저 함수가 없는 함수 - 호출할 때 마다 초기화
+            function noCount(){
+                let count = 0;
+                return count+=1 ;
+            }
+
+            //입력받은 숫자값을 더해주는 클로저 함수
+            function sumClosures(){
+                let sum = 0; // 변수 초기화
+                return function(num){ //클로저함수
+                    return sum+=num
+                }
+            }
+            // sumClosures 함수 실행, return에 넣어준 클로저 함수 startSum에 할당
+            //
+            let startSum = sumClosures();
+            document.write(`<p>${startSum(3)}</P>`)
+            document.write(`<p>${startSum(5)}</P>`)
+
+            //클로저 함수를 이용하여, 넣은 값을 계속해서 곱하는 
+    </script>
+    <script src="./ch03_변수의범위.html"></script>
+</body>
+</html>

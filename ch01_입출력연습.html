@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><span id="name"></span>님 오신것을 환영합니다</h1>
+    <p>홈페이지에 방문하신 것을 환영합니다</p>
+    <script>
+        //자바스크립트만 이용해서 작성 
+        let a = prompt("닉네임을 입력해주세요");
+        document.write(`<h1> ${a}님 오신것을 환영합니다.</h1>`);
+        document.write("<h3>홈페이지에 방문하신 것을 환영합니다</h3>")
+        //prompt를 통해서 값을 가져오고, 태그에 접근해서 값을 출력
+
+        document.querySelector("#name").innerHTML=a;
+
+        let b = prompt("생년을 입력해주세요");
+        //prompt를 통해 받아온 값은 문자열이므로 Number를 통해서 숫자로 바꿔줌 
+        let stringNum= String(b);
+        document.write(`<h1> 현재 나이는 ${2022-stringNum+1}세 입니다.</h1>`);
+
+    </script>
+</body>
+
+</html>

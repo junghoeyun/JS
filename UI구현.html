@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>    
+        
+        function resert(b){
+            
+            for(let a = 1; a<10; a++){
+                document.write(`<p> 3 x ${a} = ${a*3}</p>`);
+            }
+        }    
+    function dan (a){
+
+        for(let c = 1; c<100; c++){
+
+            let dan = prompt("원하는 단을 입력하세요");
+            if(dan == 3){
+                console.log("성공");
+                return resert();
+            } else{
+                alert("구구단에 들어가는 수가 아닙니다");
+                console.log("입력오류")
+            }
+        }
+    }
+
+    dan();
+    
+    </script>
+</body>
+</html>

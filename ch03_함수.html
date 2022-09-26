@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function introNameReturnLog(name){
+        
+            console.log("함수가 출력되었습니다.")
+        
+            return `안녕하세요 ${name}입니다. 반갑습니다`
+        }
+
+        document.write(introNameReturnLog("홍길동"));
+
+        // 명시적 함수 > math.random() > 리턴을 통해서 랜덤값을 넘겨줌
+        function area(num1,num2) {
+            
+            return `${num1*num2}`
+
+        }
+        document.write(area(5,10));
+        function avrg(array){
+            let sum = 0;
+            let avg = 0;
+            for (number of array){
+                sum += number;
+            }
+            avg = sum/array.length;
+
+            return avg;
+        }
+        let numArray = [30,60,40,60,20]
+        document.write(avrg(numArray))
+        function introName( name, adress){
+            document.write(`${name}입니다. ${adress}에 살고있습니다`);
+        }
+        // 명시적  함수 - 두 수를 더하는 함수 
+        // 매개변수에 기본값을 할당해서 사용할수 있다. (값이 들어오면 그 값으로 대체)
+        function add (num1, num2){
+            if( num2 == undefined){
+                num2 = 0;
+            }
+            let sum = num1 + num2;
+            return sum;
+        }
+        document.write(add(5))
+
+        function add (num1=0, num2=0){
+            let sum=num1+num2;
+            return sum;
+        }
+        // 나머지 매개변수: 배열형태로 들어옴
+        function allString(...word){
+            for(word of words){
+                document.write(word)
+            }
+            return words
+        }
+        // arguments 객체 - 기본값이나 나머지 매개변수를 사용하지 않을때 사용
+        function argument(a) {
+            document.write(`<p>${a}</p>`);
+            document.write(`<h3>${arguments[0]}</h3>`);
+            for(arg of arguments){
+                document.write(`<li>${arguments[0]}</li>`);
+            }
+        }
+        argument("hi");
+
+        //argument를 통해서 받은 숫자값 다 더하는 함수
+        function addAllArg(){
+            let sum = 0;
+            for(arg of arguments){
+                sum+=arg;
+             
+            }
+            return sum;
+        }
+        // 나머지 매개변수를 통해서 모든 수 다 더하기
+        function addAllRest(...nums){
+            let sum=0;
+            for (num of nums) {
+                sum=+num;
+            }
+            return sum;
+        }
+        //이름없는 함수를 사용하는 방법: 함수표현식
+        let printName = function(name){
+            document.write(name)
+            return name
+        }
+        //변수에 할당한 함수를 호출
+        printname("홍길동");
+        
+        // 함수 표현식 
+
+        </script> 
+</body>
+</html>
